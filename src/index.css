@@ -1,0 +1,449 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  background-color: rgb(59, 57, 57);
+  color: white;
+}
+.app{
+display: none;
+
+}
+.attend-list .data{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.attend-list .data p{
+  background-color: blue;
+  padding: 5px 15px;
+}
+.navbar{
+  position: relative;
+  
+}
+.navbar .header{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-image: linear-gradient(70deg,rgb(155, 34, 13),70%, rgb(2, 104, 246));
+  column-gap:0px;
+  padding: 10px 0px;
+  background-color:lightyellow;
+  padding: 20px 10px;
+  font-weight:bolder;
+  margin-bottom: 10px;
+  border-radius:0px  80px;
+  margin-top:2px;
+}
+.navbar .header img{
+  width:100px;
+  filter: contrast(1.1) saturate(2) brightness(2);
+}
+a{
+  color: inherit;
+  text-decoration: none;
+}
+.navbar .header .info{
+  display: flex;
+  flex-direction: column;
+  row-gap:10px;
+}
+.navbar .header .info h2{
+  font-weight: bolder;
+}
+.navbar .header .info p{
+  font-weight: bolder;
+  color: rgba(255, 255, 255, 0.699);
+}
+.navigation{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px;
+}
+.navigation ul{
+  display: flex;
+ list-style: none;
+ column-gap:10px;
+ margin:5px 0px;
+}
+.navigation ul li{
+ padding: 5px;
+ width:87px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ border-radius:0px 15px;
+ /* box-shadow: 0px 0px 15px rgb(2, 246, 246); */
+ color:white;
+ background-color:black;
+ font-size:17px;
+}
+.navigation p{
+  background-color: rgb(251, 71, 6);
+  padding:6px 15px;
+  color: white;
+  border-radius:0px 15px;
+  transition: 0.9s;
+}
+.navigation p:hover{
+  box-shadow: 0px 0px 15px rgb(2, 246, 246);
+  background-color: deepskyblue;
+}
+.navigation ul li:hover{
+ color: wheat;
+ box-shadow: 0px 0px 15px rgb(2, 246, 246);
+}
+.home{
+  margin: 10px;
+}
+.home img{
+  width:100%;
+  height:auto;
+  border-radius:0px 80px;
+  border:3px solid rgb(255, 253, 252);
+  filter: contrast(1.1) saturate(1.5) brightness(1.1);
+  
+}
+.home .about{
+  padding:10px;
+}
+.home h3{
+  color:rgb(2, 155, 250);
+  font-size: 22px;
+  display: flex;
+  font-weight: bolder;
+  align-items: center;
+  justify-content: center;
+  margin-top:30px;
+}
+.home .about .start-p{
+  font-weight:900;
+  margin-left: 50px;
+  color: rgb(255, 89, 0);
+}
+.home .about p{
+  font-size:20px;
+  text-align:center;
+}
+.home .app-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:rgb(0, 128, 255);
+  height:30px;
+  width:300px;
+  margin-top: 20px;
+  border-radius: 30px 0px;
+  margin-left: 50px;
+  color: white;
+  transition:all .9s;
+}
+
+.home .app-btn:hover{
+  background-color:rgb(255, 119, 0);
+}
+.register{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+ line-height:20px;
+ margin-top: 30px;
+}
+.register input{
+  width: 300px;
+  height:30px;
+  outline: none;
+  padding:0px 10px;
+  font-size:15px;
+ border-radius:5px;
+}
+.register .reg-btn{
+  background-color: orangered;
+  padding:5px 20px;
+  margin-top: 20px;
+  color: white;
+  border-radius:20px;
+}
+.register h3{
+  margin:20px 0px;
+}
+.attendence .info{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top:30px;
+}
+.attendence .list{
+  margin: 20px 20px;
+  display: flex;
+  justify-content: center;
+}
+.attendence .list  th{
+  background-color: olivedrab;
+  color: white;
+}
+.attendence .list td,.list th,.list tr{
+  padding: 10px 15px;
+  justify-content: center;
+}
+.attendence .sub-btn{
+  background-color: orangered;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 5px;
+  width:100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+.popup.active{
+  display: flex;
+}
+.popup{
+  display: none;
+  margin: 30px;
+  flex-direction: column;
+  padding:30px;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+  border-radius:10px;
+  row-gap: 10px;
+  box-shadow: 1px 2px 5px rgb(106, 106, 106);
+  position: relative;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  position: absolute;
+  transform: translate(-60%,-80%);
+  left:50%;
+  margin-top: 300px;
+}
+.popup input{
+  width:100%;
+  height:30px;
+  padding: 0px 10px;
+  font-size: 16px;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  border: 1px solid rgb(185, 181, 181);
+  border-radius: 5px;
+}
+.popup button{
+  width:100%;
+  height: 30px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius:20px;
+  background: linear-gradient(-90deg, rgb(80, 149, 239) 10%, rgb(3, 226, 88) 80%);
+  color: white;
+  margin-top: 15px;
+  transition:all 1s;
+}
+.popup button:hover{
+  box-shadow: 2px 3px 30px rgb(3, 226, 88);
+}
+.popup div p{
+  font-weight: 700;
+}
+.popup h2{
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.popup img{
+  display: flex;
+ margin-left:210px;
+ position:absolute;
+ top:10px;
+ left:50px;
+ cursor: pointer;
+}
+.registers{
+  margin:30px 20px;
+}
+.registers .info{
+  display: flex;
+  align-items: center;
+  justify-content:right;
+  margin-bottom: 30px;
+ 
+}
+.registers .info h3{
+  background-color:darkgoldenrod;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 10px;
+}
+.registers .list tr td,.list tr th{
+  padding:10px;
+}
+.registers .list table tr td .delete{
+  background-color: red;
+}
+.registers .list table tr td p{
+  background-color:rgb(185, 187, 54);
+  padding: 5px 10px;
+  color: white;
+  border-radius: 10px;
+}
+.attend-list{
+  display: flex;
+  flex-direction: column;
+}
+.attend-list .attend center{
+  width: 100%;
+  background-color:rgb(74, 202, 74);
+  margin: 5px 0px;
+  padding: 3px 0px;
+  color: white;
+}
+.attend-list .absent center{
+  width: 100%;
+  background-color: rgb(246, 110, 110);
+  margin: 5px 0px;
+  padding: 3px 0px;
+  color: white;
+}
+.attend-list .absent tr th{
+  background-color: rgb(246, 110, 110);
+  color: white;
+}
+.attend-list .attend tr th{
+  background-color:rgb(74, 202, 74);
+  color: white;
+}
+.attend-list ,.attend-list tr th,.attend-list tr td{
+  padding:5px 20px;;
+}
+.attend-list h3{
+  width:100px;
+  margin-bottom: 5px;
+  padding: 5px ;
+  border-radius: 0px 15px 15px 0px;
+  color: white;
+}
+.attend-list .attend h3{
+  background-color:rgb(74, 202, 74);
+}
+.attend-list .absent h3{
+  background-color: rgb(245, 95, 95);
+}
+.attend-list .filter{
+  display: flex;
+  align-items: center;
+  column-gap:5px;
+  margin-bottom: 10px;
+}
+.attend-list .filter .select_date{
+  background-color: #fbfcfc;
+  border: 2px solid grey;
+  color: white;
+}
+.attend-list .filter input[type='date']{
+  width:110px;
+  height:25px;
+  padding: 0px 3px;
+  border: none;
+  background-color: transparent;
+}
+.attend-list .filter input[type='submit']{
+  width:50px;
+  height:25px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  background-color: grey;
+  color: white;
+}
+.registers .list tr th{
+  background-color: green;
+  color: white;
+}
+@media screen and (max-width:500px){
+  .registers .list{
+    height: 530px;
+    overflow: scroll;
+  }
+  .attend-list{
+    display: flex;
+    flex-direction: column;
+  }
+  .attend-list tr th,.attend-list tr td{
+    padding: 5px 10px;
+  }
+  .attend-list .attend-table{
+    margin-top: 10px;
+    height: 490px;
+    overflow: scroll;
+  }
+  .attendence .list{
+    height:55vh;
+    overflow: scroll;
+  }
+}
+@media screen and (min-width:750px){
+  .home img{
+    width:80%;
+    height:350px;
+    margin: 0px 10%;
+    border-radius:0px 100px;
+    margin-top: 20px;
+  }
+  .navbar .header{
+    padding: 30px 0px;
+  }
+  .home .about{
+    padding: 10px 10%;
+    
+  }
+  .navbar .header{
+    border-radius: 0px;
+    display: flex;
+    justify-content: center;
+  }
+  .navbar ul{
+    margin: 0px 30px;
+  }
+  .home .app-btn{
+    margin:30px 40%;
+  }
+  .attend-list .attend{
+    width:700px;
+  }
+  .attend-list .absent{
+    width:700px;
+  }
+  .filter .select_date{
+    margin-right:60px;
+  }
+  .attend-list{
+    display: flex;
+  }
+  .attend-list ,.attend-list tr th,.attend-list tr td{
+    padding:5px 50px;
+  }
+  .attend-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .registers .list tr td,.list tr th{
+    padding:10px 50px;
+  }
+  .registers .list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  
+}
