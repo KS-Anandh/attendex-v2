@@ -41,7 +41,7 @@ const List = () => {
           <p style={{ fontSize: "15px" }}>{date} / {moment(Date()).format("hh:mm A")}</p>
         </div>
       </div>
-      <div className='data'><p>Present : {Alist.length}</p><p>Absent : {Plist.length}</p></div>
+      <div className='data'><p>Present : {Plist.length}</p><p>Absent : {Alist.length}</p></div>
       <div className='attend-table'>
       <div className="absent">
         <center>-- Absentees --</center>
