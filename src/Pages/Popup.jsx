@@ -4,11 +4,14 @@ import axios from 'axios';
 const Popup = ({pop,setPop,setLogin}) => {
        const [loginId,setLoginId]=useState();
        const [loginPass,setLoginPass]=useState();
+       const [load,setLoad}=useState(false);
       const login=()=>{
+        setLoad(true);
         axios.post("https://attendence-mng.vercel.app/login/verify",{loginId,loginPass})
          .then((res)=>{
           sessionStorage.setItem("token",(res.data.token));
-          alert("Login Success")
+          setLoad(false);
+          alert("Login Success");
           setPop(false);
           data();
          })
@@ -39,7 +42,7 @@ const Popup = ({pop,setPop,setLogin}) => {
            <p>Password</p>
            <input type="password" onChange={event=>setLoginPass(event.target.value)}  /><br/>
            </div>
-          <button onClick={login}>Login</button>
+          <button onClick={login}>{load?"loading...":"login"}</button>
     </div>
   )
 }
