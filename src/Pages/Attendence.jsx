@@ -6,6 +6,7 @@ const Attendence = ({setPop,login}) => {
     const [students,setStudents]=useState([])
     const [attend,setAttend]=useState([])
     const token=sessionStorage.getItem('token');
+    const [load,setLoad]=useState(false);
     useEffect(()=>{
         axios.get("https://attendence-mng.vercel.app/student",{headers:{"x-token":token}})
         .then((res)=>{
@@ -18,12 +19,14 @@ const Attendence = ({setPop,login}) => {
    const attendHandler=()=>{ 
     const inform=confirm(`Total Present is : '${attend.length}' \n Press "OK" to Submit or Press "Cancel" to Modify.`)
     if(inform){
+        setLoad(true);
         axios.post("https://attendence-mng.vercel.app/attendence",{attend:attend},{headers:{"x-token":token}})
         .then((res)=>{
          alert(res.data)
          })
         .catch(err=>console.log(err))
           }
+       setLoad(false);
     }
     
   return (
@@ -61,7 +64,8 @@ const Attendence = ({setPop,login}) => {
                
             </table>
         </div>
-        <p className='sub-btn' onClick={attendHandler}>Submit</p>
+        {load?<p className='sub-btn' style={{background:"red",color:"white"}} >Wait...</p>:<p className='sub-btn' onClick={attendHandler}>Submit</p>}
+        
     </div>
     </>
     
