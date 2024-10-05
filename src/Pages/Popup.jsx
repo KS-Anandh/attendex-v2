@@ -4,7 +4,7 @@ import axios from 'axios';
 const Popup = ({pop,setPop,setLogin}) => {
        const [loginId,setLoginId]=useState();
        const [loginPass,setLoginPass]=useState();
-       const [load,setLoad}=useState(false)
+       const [load,setLoad]=useState(false)
       const login=()=>{
         setLoad(true);
         axios.post("https://attendence-mng.vercel.app/login/verify",{loginId,loginPass})
