@@ -391,10 +391,10 @@ a{
 }
 @media screen and (min-width:750px){
   .home img{
-    width:80%;
+    width:70%;
     height:350px;
-    margin:0px;
-    border-radius:0px 100px;
+    margin:0px 15%;
+    border-radius:0px;
     margin-top: 20px;
   }
   .navbar .header{
