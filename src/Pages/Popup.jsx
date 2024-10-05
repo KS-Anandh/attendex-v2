@@ -42,7 +42,8 @@ const Popup = ({pop,setPop,setLogin}) => {
            <p>Password</p>
            <input type="password" onChange={event=>setLoginPass(event.target.value)}  /><br/>
            </div>
-          <button onClick={login}>{load?"loading...":"login"}</button>
+           {load?<button style={{background:"red"}}>loading...</button>:<button onClick={login}>login</button>}
+          
     </div>
   )
 }
