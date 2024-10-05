@@ -22,8 +22,8 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home setPop={setPop} login={login}/>}/>
         <Route path="/registers/" element={<Registers setPop={setPop}/>}/>
-        {login.user_status==="room"?<Route path="/attendence/" element={< Attendence setPop={setPop} login={login}/>}/>:""}
-        {login.user_status==="admin"?<Route path="/attendence/" element={< List setPop={setPop} login={login}/>}/>:""}
+        {login.user_status==="room"?<Route path="/attendence/" element={< Attendence setPop={setPop} login={login}/>}/>:<Route path="/attendence/" element={<Access data="Login Required"/>}/>}
+        {login.user_status==="admin"?<Route path="/attendence/" element={< List setPop={setPop} login={login}/>}/>:<Route path="/attendence/" element={<Access data="Login Required"/>}/>}
         {login.user_status==="admin"?<Route path="/register/" element={<Register setPop={setPop}/>}/>:<Route path="/register/" element={<Access data="Only Admin"/>}/>}
         {login.user_status==="admin"?<Route path="/update/:id" element={<Update/>}/>:""}
         <Route path="/list/" element={<List/>}/>
