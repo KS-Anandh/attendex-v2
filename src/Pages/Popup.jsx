@@ -15,7 +15,10 @@ const Popup = ({pop,setPop,setLogin}) => {
           setPop(false);
           data();
          })
-         .catch((err)=>{ alert("Invalid login")})
+         .catch((err)=>{
+                alert("Invalid login")
+                setLoad(false);
+         })
       } 
       const data=()=>{
         const token=sessionStorage.getItem("token")
